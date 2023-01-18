@@ -3,6 +3,7 @@ import Home from "../Home/Home"
 import Buttons from "../Buttons/Buttons"
 
 const Navbar = () => {
+
     return (
     <nav className="navbar">
         <Home/>

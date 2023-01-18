@@ -1,10 +1,13 @@
-import ImgHome from './assets/casa.png'
-// import './Home.css'
+import ImgHome from '../../assets/casa.png'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+
+    const navigate = useNavigate()
+
     return (
         <div>
-            <img className="icono" src={ImgHome} alt="Home" />
+            <img onClick={() => navigate('/')} className="icono" src={ImgHome} alt="Home" />
         </div>
     )
 }

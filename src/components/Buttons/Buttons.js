@@ -1,8 +1,12 @@
 import './Buttons.css'
+import { useNavigate } from 'react-router-dom'
 
 const Buttons = ({nombre}) => {
+
+    const navigate = useNavigate()
+
     return (
-        <button className="button btn">{nombre}</button>
+        <button onClick={() => navigate(`/category/${nombre.toLowerCase()}`)} className="button btn">{nombre}</button>
     )
 }
 
