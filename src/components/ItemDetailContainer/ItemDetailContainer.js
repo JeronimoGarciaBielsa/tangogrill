@@ -2,6 +2,7 @@ import { getProductById } from "../../asyncMock"
 import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail"
+import Loading from "../Loading/Loading"
 
 const ItemDetailContainer = () => {
 
@@ -26,12 +27,16 @@ const ItemDetailContainer = () => {
     }, [id])
 
     if(loading){
-        <h1>Cargando...</h1>
+        return (
+            <div className="itemListContainer loading">
+                <Loading/>
+            </div>
+        )
     }
 
     return(
-        <div>
-            <h1>Detalle de Producto</h1>
+        <div className="itemDetailContainer">
+            <h1 className="tituloProductos">Detalle de Producto</h1>
             <ItemDetail {...product}/>
         </div>
     )

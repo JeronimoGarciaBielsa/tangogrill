@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,700;1,100;1,700&display=swap');
+
+body{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -62,9 +68,9 @@
 
 .presentation{
   background-image: url(assets/fondo.JPG);
-  background-position: center;
+  background-position: 50% 60%;
   background-size: cover;
-  height: 60vh;
+  height: 45vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -90,6 +96,50 @@
   color: white;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.itemDetailContainer{
+  background-color: rgb(27, 27, 27);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tituloProductos{
+  font-size: 2.2rem;
+  padding: 3rem 0rem;
+  text-transform: uppercase;
+  color: #e0dfdc;
+  letter-spacing: .1em;
+  text-shadow: 
+    0 -1px 0 #fff, 
+    0 1px 0 #2e2e2e, 
+    0 2px 0 #2c2c2c, 
+    0 3px 0 #2a2a2a, 
+    0 4px 0 #282828, 
+    0 5px 0 #262626, 
+    0 6px 0 #242424, 
+    0 7px 0 #222, 
+    0 8px 0 #202020, 
+    0 9px 0 #1e1e1e, 
+    0 10px 0 #1c1c1c, 
+    0 11px 0 #1a1a1a, 
+    0 12px 0 #181818, 
+    0 13px 0 #161616, 
+    0 14px 0 #141414, 
+    0 15px 0 #121212, 
+    0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+.loading{
+  justify-content: center;
+  align-items: center;
 }
 
 .itemList{
@@ -98,6 +148,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .item{
@@ -165,11 +216,180 @@
 }
 
 .itemDetail{
+  background-color: white;
+  color: #282c34;
+  width: 60%;
+  height: 28rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  border-radius: 3rem;
 }
 
 .itemDetail img{
-  width: 20rem;
+  width: 17rem;
+}
+
+.itemDetailDescription{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.itemDetail div h2{
+  font-size: 2.3rem;
+  margin: 0;
+}
+
+.itemDetail div h3{
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.itemDetail div p{
+  font-size: 1.3rem;
+}
+
+.itemDetail div p:last-child{
+  font-size: 1.1rem;
+  color: rgb(93, 93, 93);
+}
+
+.itemCount{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 80%;
+}
+
+.itemCount div{
+  padding: 1rem 0;
+}
+
+.itemCount div button{
+  margin: 0 0.3rem;
+}
+
+.spinner {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.spinner span {
+  /* position: absolute; */
+  top: 50%;
+  left: var(--left);
+  width: 35px;
+  height: 7px;
+  background: #ffff;
+  animation: dominos 1s ease infinite;
+  box-shadow: 2px 2px 3px 0px black;
+}
+
+.spinner span:nth-child(1) {
+  --left: 80px;
+  animation-delay: 0.125s;
+}
+
+.spinner span:nth-child(2) {
+  --left: 70px;
+  animation-delay: 0.3s;
+}
+
+.spinner span:nth-child(3) {
+  left: 60px;
+  animation-delay: 0.425s;
+}
+
+.spinner span:nth-child(4) {
+  animation-delay: 0.54s;
+  left: 50px;
+}
+
+.spinner span:nth-child(5) {
+  animation-delay: 0.665s;
+  left: 40px;
+}
+
+.spinner span:nth-child(6) {
+  animation-delay: 0.79s;
+  left: 30px;
+}
+
+.spinner span:nth-child(7) {
+  animation-delay: 0.915s;
+  left: 20px;
+}
+
+.spinner span:nth-child(8) {
+  left: 10px;
+}
+
+@keyframes dominos {
+  50% {
+    opacity: 0.7;
+  }
+
+  75% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+}
+
+/* CSS */
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: 0.55rem 1.25rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
 }
