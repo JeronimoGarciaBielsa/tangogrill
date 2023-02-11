@@ -1,10 +1,11 @@
 import ImgCartWidget from '../../assets/carrito.png'
 
-const CartWidget = () => {
+const CartWidget = ({totalQuantity}) => {
+
     return (
-        <div style={{ fontSize: '1.3rem'}}>
+        <div className='cartWidget'>
             <img className="icono" src={ImgCartWidget} alt="Carrito de compras" />
-            0
+            <p>{totalQuantity}</p>
         </div>
     )
 }

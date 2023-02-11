@@ -45,7 +45,7 @@ body{
 
 .icono{
   width: 1.5rem;
-  padding: 0px 2rem;
+  padding: 0px 1rem;
   cursor: pointer;
 }
 
@@ -66,6 +66,61 @@ body{
   padding: 0px 3rem;
 }
 
+.btn {
+  color: rgb(210, 210, 210);
+  background-color: transparent;
+  cursor: pointer;
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 30px;
+  max-width: 160px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+  border-width: 0px;
+}
+
+.button {
+  letter-spacing: 0;
+}
+
+.button:hover,
+.button:active {
+  letter-spacing: 2px;
+}
+
+.button:after,
+.button:before {
+  backface-visibility: hidden;
+  border: 1px solid rgb(210, 210, 210, 0);
+  bottom: 0px;
+  content: "";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.button:hover:after,
+.button:hover:before {
+  backface-visibility: hidden;
+  border-color: rgb(210, 210, 210);
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.button:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 40%;
+}
+
 .presentation{
   background-image: url(assets/fondo.JPG);
   background-position: 50% 60%;
@@ -78,17 +133,21 @@ body{
 }
 
 .presentation h1{
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin: 0;
   padding-right: 2rem;
+  padding-bottom: 1rem;
   color: white;
+  text-shadow: -1vmin 0vmin 5px rgb(27, 27, 27);
 }
 
 .presentation p{
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 600;
   padding-right: 2rem;
   margin: 0;
   color: white;
+  text-shadow: -4px -2px 3px rgb(27, 27, 27);
 }
 
 .itemListContainer{
@@ -392,4 +451,94 @@ body{
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
+}
+
+.notification{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 3rem;
+  width: 10rem;
+  font-size: 16px;
+  background-color: green;
+  top: 6%;
+  left: 87%;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  border: solid 3px rgb(23, 86, 8);
+  font-weight: bold;
+  padding: 2px 5px;
+}
+
+.cartWidget{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartWidget p{
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.footer{
+  background-color: rgb(27, 27, 27);
+  color: white;
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.tg{
+  width: 6rem;
+  border: solid 3px white;
+  border-radius: 1rem;
+}
+
+.footer .botones{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  padding: 3rem;
+  margin: 0 12rem;
+}
+
+.footer .botones div{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 6rem;
+}
+
+.footer ul{
+  width: 12rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer ul li{
+  list-style-type: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+.footer ul li button{
+  margin: 0;
 }

@@ -1,8 +1,12 @@
+import { useContext } from "react"
 import CartWidget from "../CartWidget/CartWidget"
 import Home from "../Home/Home"
 import Buttons from "../Buttons/Buttons"
+import { CartContext } from "../../context/CartContext"
 
 const Navbar = () => {
+
+const { totalQuantity } = useContext(CartContext)
 
     return (
     <nav className="navbar">
@@ -12,7 +16,7 @@ const Navbar = () => {
         <h1 className="logo">TG</h1>  {/* Esto será remplazado por un Logo  */}
         <Buttons nombre="Tablas"/>
         <Buttons nombre="Accesorios"/>
-        <CartWidget/>
+        <CartWidget totalQuantity={totalQuantity}/> 
     </nav>
     )
 }
