@@ -5,7 +5,7 @@ const Item = ( {id, name, img, price, stock} ) => {
     const navigate = useNavigate()
 
     return(
-        <div className="item">
+        <div onClick={ () => navigate(`/detail/${id}`)} className="item">
             <h2>{name}</h2>
             <img src={img} alt={name} />
             <p>€ {price}</p>

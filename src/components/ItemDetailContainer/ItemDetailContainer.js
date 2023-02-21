@@ -1,34 +1,32 @@
-import { getProductById } from "../../asyncMock"
-import { useState, useEffect } from "react"
 import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Loading from "../Loading/Loading"
+import { getProductById } from "../../services/firebase/firestore/products"
+import { useAsync } from "../../hooks/useAsync"
+import { useTitle } from '../../hooks/useTitle'
 
 const ItemDetailContainer = () => {
-
-    const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(false)
-
-    const {id} = useParams() 
     
-    useEffect( () => {
-        setLoading(true)
-        getProductById(id)
-            .then(product => {
-            setProduct(product)
-        })
-            .catch( error => {
-                console.log(error)
-            })
-            .finally( () => {
-            setLoading(false)
-        })
-    }, [id])
+    const {id} = useParams() 
+
+    useTitle('Detalles del producto', [])
+
+    const getProductWithId = () => getProductById(id) 
+
+    const { data: product, error, loading } = useAsync(getProductWithId, [])
 
     if(loading){
         return (
             <div className="itemListContainer loading">
                 <Loading/>
+            </div>
+        )
+    }
+
+    if(error) {
+        return (
+            <div className="itemDetailContainer">
+                <h1 className='tituloProductos'>Hubo un error al cargar el producto</h1>
             </div>
         )
     }
