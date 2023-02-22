@@ -1,70 +1,46 @@
-# Getting Started with Create React App. Cambie el readme para agregar variables de entorno
+# Tango Grill
+## _E-commerce de accesorios para asados_
+#### Deploy :
+- https://tangogrill.vercel.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-## Available Scripts
+Tango Grill es una SPA creada con React, Css y Firebase como base de datos
 
-In the project directory, you can run:
+## Funciones
 
-### `npm start`
+- Filtrado de productos por categoria y por ID
+- Creacion de orden de compra con ID propio
+- Visualizacion del detalle de cada producto
+- Ingreso de datos del cliente para el manejo de ordenes
+- Visualizacion del carrito
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologia
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tango Grill utiliza estos proyectos de codigo abierto para trabajar:
 
-### `npm test`
+- React.Js - Libreria de Javascript
+- Css - Diseño de la SPA
+- Node.Js - Ejecucion de la SPA
+- Firebase - Base de datos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalacion
 
-### `npm run build`
+Tango Grill requiere React para correr la SPA.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+- Clonar el repositorio
+- Instalar las dependencias
+- Configurar variables de entorno (ver .env.example)
+- Ejecutar npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Logica y estructura de la SPA
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Tango Grill esta separada por componentes donde cada uno maneja su propia logica. El componente padre maneja la logica de cada ruta por ej: ItemListContainer hace los llamados a la base de datos
 
-### `npm run eject`
+El servicio de notificaciones maneja mensajes de exito y error, verde y rojo respectivamente
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+La comunicacion con el backend esta manejada por funciones exportadas desde services/firebase/firestore.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tango Grill esta diseñada con Css puro, no fueron utilizados frameworks
